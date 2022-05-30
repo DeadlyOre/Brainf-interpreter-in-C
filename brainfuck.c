@@ -177,9 +177,11 @@ void run(const char* source) {
 
         Result result = runChar(source, &t);
         if (result == RUN_FINISHED) {
+            free(t.cells);
             return;
         } else if (result == RUN_ERROR) {
-            printf("PLACEHOLDER ERROR");
+            free(t.cells);
+            printf("Error");
             return;
         }
     }
